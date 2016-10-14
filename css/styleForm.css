@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+h1{
+	width:40%;
+	padding:20px 0px;
+	margin:auto;
+}
+form{
+	padding:0px;
+	width:60%;
+	margin:0px 10%;
+}
+table{
+	border-radius:3px;
+	box-shadow:2px 2px 15px;
+	border:medium;
+	margin:10%;
+	width:100%;
+	height:600px;
+	color:#000;
+	background:inherit;
+	padding:20px;
+	margin:auto auto 5% 25%;	
+	background-color:#CCC;
+}
+tr{
+	margin:20%;
+	height:100px;	
+	padding:0px;	
+}
+.campo-boton{
+	height:40px;
+}
+
+textarea{
+	border-radius:3px;
+	width:95%;	
+	height:100%;
+	border:solid thin;}
+input{
+	border-radius:3px;	
+	border:solid thin;
+}
+.campo-simple{
+	height:30px;	
+}
+.campo-label{
+	padding-left:5%;
+	width:30%
+}
+input{
+	height:80%;
+	width:40%;
+}
+
