@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+#content-slider{
+	width: 100%;
+	border: 1px solid red;
+	position: relative;
+	height: 200px;
+}
+#slider{
+	border-radius: 10px;
+	border: 2px solid violet;
+	width: 100%;
+	min-height: 200px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+#slider .element-home{
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#slider .element-home img{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+#slider .element-home p{
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-shadow: 2px 2px 3px black;
+
+}
