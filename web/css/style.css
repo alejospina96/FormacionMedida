@@ -118,6 +118,21 @@ body {
 	padding: 20px 30px;
 	text-transform: uppercase;
 }
+		        
+nav li ul {
+   width: 250px;
+   margin:0;
+   display:none;
+   background:#F8F8F8;
+   border:1px #ccc solid;
+   position: absolute;
+   left: 100%;
+   top:-1px;
+}
+nav li:hover ul {
+   display: block;
+}
+
 /* start soc_icons */
 .soc_icons {
 
