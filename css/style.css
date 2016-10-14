@@ -1,3 +1,121 @@
 @charset "utf-8";
 /* CSS Document */
+*{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+} 
 
+/*Inicio del style para el header*/
+
+header{
+	display: inline;
+}
+.header{
+	margin: 0 20%;
+	height: 80px;
+	background-color: white;
+	font-size: 30px;
+	color:  rgba(5,55,108,1);
+
+}
+/*Inicio del style para el header*/
+/*Inicio del style para el nav*/
+
+/* Quita el estilo y da margen a las listas*/
+
+li, ul{
+	list-style: none;
+	margin: 0%;
+	padding: 0%;
+}
+/* da el formato del navegador (posiciona)*/
+nav{
+	clear: both;
+	margin: 0 20%;
+	height: 40px;
+	width: 80%;
+}
+/*porpiedades del texto y el label*/
+nav li a{	
+	text-decoration: none;
+	color: white;
+	background-color: rgba(5,55,108,1);
+	padding: 1% 2%;
+	display:block;
+}
+
+/* sombreado al pasar el mause*/
+nav li button:hover{
+	background-color: rgba(77,120,166,1);
+}
+
+nav li a:hover{
+	background-color: rgba(77,120,166,1);
+}
+
+/*ocultar los submenus*/
+nav li ul{
+	display:none ;
+}
+
+/*Aparece el submenu*/
+nav li:hover > ul{
+	display: block;
+}
+/*para la forma*/
+nav > li{
+	float: left;
+}
+
+/* da el formato de los sublabels*/
+.subLi{
+	line-height: 30px;
+	background-color: white;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	box-shadow: 2px 2px 15px;
+}
+/* da el color de los sublabes al pasar por encima*/
+.subLi:hover{
+	background-color: rgba(5,55,108,1);
+}
+
+/*da la forma de los bonotes del submenu*/
+.subBut{
+	background-color: rgba(255,255,255,0);
+	border: none;
+	color: rgba(5,55,108,1);
+	width: 100%;
+	height: 100%;	
+}
+
+.subBut:hover{
+	color: white;
+	background-color: rgba(5,55,108,1);
+}
+/* da el tamaño de los lablel principales*/
+li{
+	line-height: 30px;
+	background-color: rgba(5,55,108,1);
+	padding: 0px;
+	height: 100%;
+	width: 15%;
+	position: relative;
+}
+/*formato de los botones*/
+
+button{
+	background-color: rgba(255,255,255,0);
+	border: none;
+	color: white;
+	width: 100%;
+	height: 100%;	
+}
+
+section{
+	clear:both;
+	margin: 0 20%;
+}
+/*finaliza el style del nav*/
