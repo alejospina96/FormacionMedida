@@ -12,7 +12,6 @@ header{
 }
 .header{
 	margin: 0 10%;
-	height: 80px;
 	background-color: white;
 	font-size: 30px;
 	color:  rgba(5,55,108,1);
@@ -30,14 +29,11 @@ li, ul{
 }
 /* da el formato del navegador (posiciona)*/
 nav{
+	padding-top: 10px;
 	clear: both;
 	margin: 0 10%;
 	height: 40px;
 	width: 80%;
-	background: -webkit-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
-	background: -o-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
-	background: -moz-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
-	background: -ms-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
 }
 /*porpiedades del texto y el label*/
 nav li a{	
@@ -101,11 +97,10 @@ nav > li{
 }
 /* da el tamaño de los lablel principales*/
 li{
-	line-height: 30px;
 	background-color: rgba(5,55,108,1);
 	padding: 0px;
 	height: 100%;
-	width: 20%;
+	width: 25%;
 	position: relative;
 	background: -webkit-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
 	background: -o-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
@@ -120,6 +115,10 @@ li{
 	width: 100%;
 	height: 100%;
 	background-color: inherit;
+}
+
+.button:focus{
+	background-color: rgba(77,120,166,1);
 }
 
 /*finaliza el style del nav*/
