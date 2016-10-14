@@ -11,7 +11,7 @@ header{
 	display: inline;
 }
 .header{
-	margin: 0 20%;
+	margin: 0 10%;
 	height: 80px;
 	background-color: white;
 	font-size: 30px;
@@ -31,9 +31,13 @@ li, ul{
 /* da el formato del navegador (posiciona)*/
 nav{
 	clear: both;
-	margin: 0 20%;
+	margin: 0 10%;
 	height: 40px;
 	width: 80%;
+	background: -webkit-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -o-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -moz-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -ms-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
 }
 /*porpiedades del texto y el label*/
 nav li a{	
@@ -84,7 +88,7 @@ nav > li{
 
 /*da la forma de los bonotes del submenu*/
 .subBut{
-	background-color: rgba(255,255,255,0);
+	background-color:white;
 	border: none;
 	color: rgba(5,55,108,1);
 	width: 100%;
@@ -101,21 +105,28 @@ li{
 	background-color: rgba(5,55,108,1);
 	padding: 0px;
 	height: 100%;
-	width: 15%;
+	width: 20%;
 	position: relative;
 }
 /*formato de los botones*/
 
-li button{
-	background-color: rgba(255,255,255,0);
+.button{
 	border: none;
 	color: white;
 	width: 100%;
 	height: 100%;	
+	background: -webkit-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -o-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -moz-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+	background: -ms-linear-gradient(top, rgba(5,55,108,1) 80% , rgba(77,120,166,1) 20%);
+}
+
+/*finaliza el style del nav*/
+.relleno{
+	height: 30px;
 }
 
 section{
 	clear:both;
 	margin: 0 20%;
 }
-/*finaliza el style del nav*/
