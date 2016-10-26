@@ -7,25 +7,28 @@
 <link rel="stylesheet" href="css/styleForm.css"/>
 <link rel="stylesheet" href="css/styleListas.css"/>
 <link rel="stylesheet" href="css/styleNav.css">
+<link rel="stylesheet" href="css/styleFooter.css">
+<link rel="stylesheet" href="css/styleHome.css">
 <script src="js/botones-muestran.js">
 </script>
 </head>
 <body>
 <!--Header-->
 <header>
-  <h1 class="header"><img src="images/icon.jpg" title="" alt="" height="65" width="100">Formacion A La Medida</h1>
+  <img src="images/icon-header.jpg" style="float: left; margin-left: 10%" title="" alt="" height="65" width="100">
+  <h1 class="header" style="margin-top: 10px; padding-top: 18px;">Formacion A La Medida</h1>
   </a> </header>
  <!--Fin header-->
  <!--Barra de navegacion-->
 <nav>
   <li>
-    <button id="inicio" type="button">Inicio</button>
+    <button class="button" id="inicio" type="button" autofocus>Inicio</button>
   </li>
   <li>
-    <button id="empresas" type="button">Empresas</button>
+    <button class="button" id="empresas" type="button">Empresas</button>
   </li>
   <li>
-    <button type="button">Seminarios +</button>
+    <button class="button" type="button">Seminarios+</button>
     <ul>
       <li class="subLi">
         <button id="crear-seminario" class="subBut" type="button">Crear</button>
@@ -36,13 +39,11 @@
     </ul>
   </li>
   <li>
-    <button id="historial" type="button">Historial</button>
-  </li>
-  <li>
-    <button id="contacto" type="button">Contactenos</button>
+    <button class="button" id="historial" type="button">Historial</button>
   </li>
 </nav>
 <!--Fin barra de navegacion-->
+<div class="relleno"></div>
 <!-- seccion empresas-->
 <section id="seccion-empresas" class="seccion-lista">
   <h1>Empresas</h1>
@@ -152,26 +153,25 @@
 <!--fin seccion crear empresa--> 
 <!--Seccion inicio-->
 <section id="seccion-inicio">
-  <article>
-    <h1>Inicio</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <article id="content-slider">
+    <div id="slider">
+      <div class="element-home">
+        <img src="images/banner1.jpg">
+        <p>Algo de La Universidad</p>
+      </div>
+      <div class="element-home">
+        <img src="images/banner2.jpg">
+        <p>Algo de La Universidad</p>
+      </div>
+      <div class="element-home">
+        <img src="images/banner3.jpg">
+        <p>Algo de La Universidad</p>
+      </div>
+      <div class="element-home">
+        <img src="images/banner4.jpg">
+        <p>Algo de La Universidad</p>
+      </div>
+    </div>
   </article>
 </section>
 <!--Fin Seccion inicio--> 
@@ -225,5 +225,24 @@
   </article>
 </section>
 <!--Fin seccion contacto-->
+<!--Footer-->
+
+<div class="relleno"></div>
+<footer>
+  <section id="section-footer">
+
+  <p> <small> Universidad de Ibagué - Carrera 22 Calle 67 B/Ambalá - NIT: 890704382-1 - Resolución 1867 de febrero 27 de 1981  </small> </p>
+  <p> <small>Centro de contacto: +57(8)270 9444 - FAX: +57(8)2709443 - PBX: +57(8)2709400 </small></p>  
+  <p> <small>Línea gratuita nacional: 018000 91 0277 - Ibagué, Tolima, Colombia.</small></p>
+  <p> <small>Desarrolladores Cristian Garzon: <a href="mailto:crishegar1495@hotmail.com"> crishegar1495@hotmail.com</a> &nbsp;tfno: 3193387845</small></p>
+  <p> <small>Daniel Florez: <a href="mailto:alejo_ospina96@hotmail.com"> alejo_ospina96@hotmail.com</a> &nbsp;tfno: 3166172886</small></p>
+  <figure>
+    <a id="icon-footer" href="https://www.unglobalcompact.org/"><img src="images/icon-footer.png"></a> 
+  </figure>
+
+  </section>
+  
+</footer>
+<!--Fin footer-->
 </body>
 </html>
