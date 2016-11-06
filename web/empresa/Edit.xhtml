@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEmpresaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_nit}" for="nit" />
+                    <h:inputText id="nit" value="#{empresaController.selected.nit}" title="#{bundle.EditEmpresaTitle_nit}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_nit}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_razonsocial}" for="razonsocial" />
+                    <h:inputText id="razonsocial" value="#{empresaController.selected.razonsocial}" title="#{bundle.EditEmpresaTitle_razonsocial}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_razonsocial}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{empresaController.selected.direccion}" title="#{bundle.EditEmpresaTitle_direccion}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_ciudad}" for="ciudad" />
+                    <h:inputText id="ciudad" value="#{empresaController.selected.ciudad}" title="#{bundle.EditEmpresaTitle_ciudad}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_ciudad}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{empresaController.selected.email}" title="#{bundle.EditEmpresaTitle_email}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_departamento}" for="departamento" />
+                    <h:inputText id="departamento" value="#{empresaController.selected.departamento}" title="#{bundle.EditEmpresaTitle_departamento}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_departamento}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_numeroempleados}" for="numeroempleados" />
+                    <h:inputText id="numeroempleados" value="#{empresaController.selected.numeroempleados}" title="#{bundle.EditEmpresaTitle_numeroempleados}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_numeroempleados}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_numerosucursales}" for="numerosucursales" />
+                    <h:inputText id="numerosucursales" value="#{empresaController.selected.numerosucursales}" title="#{bundle.EditEmpresaTitle_numerosucursales}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_numerosucursales}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_actividadeconomica}" for="actividadeconomica" />
+                    <h:inputText id="actividadeconomica" value="#{empresaController.selected.actividadeconomica}" title="#{bundle.EditEmpresaTitle_actividadeconomica}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_actividadeconomica}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_descripcionproyecto}" for="descripcionproyecto" />
+                    <h:inputText id="descripcionproyecto" value="#{empresaController.selected.descripcionproyecto}" title="#{bundle.EditEmpresaTitle_descripcionproyecto}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_descripcionproyecto}"/>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_contacto}" for="contacto" />
+                    <h:selectOneMenu id="contacto" value="#{empresaController.selected.contacto}" title="#{bundle.EditEmpresaTitle_contacto}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_contacto}">
+                        <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmpresaLabel_representante}" for="representante" />
+                    <h:selectOneMenu id="representante" value="#{empresaController.selected.representante}" title="#{bundle.EditEmpresaTitle_representante}" required="true" requiredMessage="#{bundle.EditEmpresaRequiredMessage_representante}">
+                        <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{empresaController.update}" value="#{bundle.EditEmpresaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEmpresaViewLink}"/>
+                <br />
+                <h:commandLink action="#{empresaController.prepareList}" value="#{bundle.EditEmpresaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEmpresaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
