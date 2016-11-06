@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateHorariocursoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateHorariocursoLabel_horariocursoPK_horainicio}" for="horariocursoPK_horainicio" />
+                    <h:inputText id="horariocursoPK_horainicio" value="#{horariocursoController.selected.horariocursoPK.horainicio}" title="#{bundle.CreateHorariocursoTitle_horariocursoPK_horainicio}" required="true" requiredMessage="#{bundle.CreateHorariocursoRequiredMessage_horariocursoPK_horainicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateHorariocursoLabel_horariocursoPK_dia}" for="horariocursoPK_dia" />
+                    <h:inputText id="horariocursoPK_dia" value="#{horariocursoController.selected.horariocursoPK.dia}" title="#{bundle.CreateHorariocursoTitle_horariocursoPK_dia}" required="true" requiredMessage="#{bundle.CreateHorariocursoRequiredMessage_horariocursoPK_dia}"/>
+                    <h:outputLabel value="#{bundle.CreateHorariocursoLabel_horafin}" for="horafin" />
+                    <h:inputText id="horafin" value="#{horariocursoController.selected.horafin}" title="#{bundle.CreateHorariocursoTitle_horafin}" required="true" requiredMessage="#{bundle.CreateHorariocursoRequiredMessage_horafin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateHorariocursoLabel_cursoformacion}" for="cursoformacion" />
+                    <h:selectOneMenu id="cursoformacion" value="#{horariocursoController.selected.cursoformacion}" title="#{bundle.CreateHorariocursoTitle_cursoformacion}" required="true" requiredMessage="#{bundle.CreateHorariocursoRequiredMessage_cursoformacion}">
+                        <f:selectItems value="#{cursoformacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{horariocursoController.create}" value="#{bundle.CreateHorariocursoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{horariocursoController.prepareList}" value="#{bundle.CreateHorariocursoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateHorariocursoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

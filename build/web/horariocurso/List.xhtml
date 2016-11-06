@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHorariocursoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListHorariocursoEmpty}" rendered="#{horariocursoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{horariocursoController.items.rowCount > 0}">
+                    <h:outputText value="#{horariocursoController.pagination.pageFirstItem + 1}..#{horariocursoController.pagination.pageLastItem + 1}/#{horariocursoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{horariocursoController.previous}" value="#{bundle.Previous} #{horariocursoController.pagination.pageSize}" rendered="#{horariocursoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{horariocursoController.next}" value="#{bundle.Next} #{horariocursoController.pagination.pageSize}" rendered="#{horariocursoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{horariocursoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorariocursoTitle_horariocursoPK_dia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horariocursoPK.dia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorariocursoTitle_horariocursoPK_horainicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horariocursoPK.horainicio}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorariocursoTitle_horafin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horafin}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorariocursoTitle_cursoformacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cursoformacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{horariocursoController.prepareView}" value="#{bundle.ListHorariocursoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{horariocursoController.prepareEdit}" value="#{bundle.ListHorariocursoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{horariocursoController.destroy}" value="#{bundle.ListHorariocursoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{horariocursoController.prepareCreate}" value="#{bundle.ListHorariocursoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListHorariocursoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

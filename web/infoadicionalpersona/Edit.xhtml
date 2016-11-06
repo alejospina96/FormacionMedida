@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditInfoadicionalpersonaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditInfoadicionalpersonaLabel_contenido}" for="contenido" />
+                    <h:inputText id="contenido" value="#{infoadicionalpersonaController.selected.contenido}" title="#{bundle.EditInfoadicionalpersonaTitle_contenido}" required="true" requiredMessage="#{bundle.EditInfoadicionalpersonaRequiredMessage_contenido}"/>
+                    <h:outputLabel value="#{bundle.EditInfoadicionalpersonaLabel_infoadicional}" for="infoadicional" />
+                    <h:selectOneMenu id="infoadicional" value="#{infoadicionalpersonaController.selected.infoadicional}" title="#{bundle.EditInfoadicionalpersonaTitle_infoadicional}" required="true" requiredMessage="#{bundle.EditInfoadicionalpersonaRequiredMessage_infoadicional}">
+                        <f:selectItems value="#{infoadicionalController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditInfoadicionalpersonaLabel_persona1}" for="persona1" />
+                    <h:selectOneMenu id="persona1" value="#{infoadicionalpersonaController.selected.persona1}" title="#{bundle.EditInfoadicionalpersonaTitle_persona1}" required="true" requiredMessage="#{bundle.EditInfoadicionalpersonaRequiredMessage_persona1}">
+                        <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{infoadicionalpersonaController.update}" value="#{bundle.EditInfoadicionalpersonaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditInfoadicionalpersonaViewLink}"/>
+                <br />
+                <h:commandLink action="#{infoadicionalpersonaController.prepareList}" value="#{bundle.EditInfoadicionalpersonaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditInfoadicionalpersonaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
