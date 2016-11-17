@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+footer{
+	text-align: center;
+	color: #05376c;
+	margin: 0 10%;
+}
+#section-footer{
+	display: inline;
+}

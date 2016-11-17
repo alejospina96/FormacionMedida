@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPersonaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPersonaLabel_identificacion}"/>
+                    <h:outputText value="#{personaController.selected.identificacion}" title="#{bundle.ViewPersonaTitle_identificacion}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_ciudadexpedicionidentificacion}"/>
+                    <h:outputText value="#{personaController.selected.ciudadexpedicionidentificacion}" title="#{bundle.ViewPersonaTitle_ciudadexpedicionidentificacion}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_primernombre}"/>
+                    <h:outputText value="#{personaController.selected.primernombre}" title="#{bundle.ViewPersonaTitle_primernombre}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_segundonombre}"/>
+                    <h:outputText value="#{personaController.selected.segundonombre}" title="#{bundle.ViewPersonaTitle_segundonombre}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_primerapellido}"/>
+                    <h:outputText value="#{personaController.selected.primerapellido}" title="#{bundle.ViewPersonaTitle_primerapellido}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_segundoapellido}"/>
+                    <h:outputText value="#{personaController.selected.segundoapellido}" title="#{bundle.ViewPersonaTitle_segundoapellido}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_genero}"/>
+                    <h:outputText value="#{personaController.selected.genero}" title="#{bundle.ViewPersonaTitle_genero}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_email}"/>
+                    <h:outputText value="#{personaController.selected.email}" title="#{bundle.ViewPersonaTitle_email}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_telefono}"/>
+                    <h:outputText value="#{personaController.selected.telefono}" title="#{bundle.ViewPersonaTitle_telefono}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_celular}"/>
+                    <h:outputText value="#{personaController.selected.celular}" title="#{bundle.ViewPersonaTitle_celular}"/>
+                    <h:outputText value="#{bundle.ViewPersonaLabel_tipo}"/>
+                    <h:outputText value="#{personaController.selected.tipo}" title="#{bundle.ViewPersonaTitle_tipo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{personaController.destroyAndView}" value="#{bundle.ViewPersonaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPersonaEditLink}"/>
+                <br />
+                <h:commandLink action="#{personaController.prepareCreate}" value="#{bundle.ViewPersonaCreateLink}" />
+                <br />
+                <h:commandLink action="#{personaController.prepareList}" value="#{bundle.ViewPersonaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPersonaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

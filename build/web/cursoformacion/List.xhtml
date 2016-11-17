@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCursoformacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCursoformacionEmpty}" rendered="#{cursoformacionController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{cursoformacionController.items.rowCount > 0}">
+                    <h:outputText value="#{cursoformacionController.pagination.pageFirstItem + 1}..#{cursoformacionController.pagination.pageLastItem + 1}/#{cursoformacionController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{cursoformacionController.previous}" value="#{bundle.Previous} #{cursoformacionController.pagination.pageSize}" rendered="#{cursoformacionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{cursoformacionController.next}" value="#{bundle.Next} #{cursoformacionController.pagination.pageSize}" rendered="#{cursoformacionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{cursoformacionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_referencia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referencia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_fechainicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechainicio}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_fechafinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechafinal}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_justifiacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.justifiacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_objetivosgenerales}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.objetivosgenerales}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_objetivosespecificos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.objetivosespecificos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_valorempresa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorempresa}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_valorlocal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorlocal}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_lugar}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lugar}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_aprobado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aprobado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_clienteformacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.clienteformacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_conferencista}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.conferencista}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCursoformacionTitle_tipocursoformacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipocursoformacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{cursoformacionController.prepareView}" value="#{bundle.ListCursoformacionViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cursoformacionController.prepareEdit}" value="#{bundle.ListCursoformacionEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cursoformacionController.destroy}" value="#{bundle.ListCursoformacionDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{cursoformacionController.prepareCreate}" value="#{bundle.ListCursoformacionCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCursoformacionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCursoformacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_referencia}"/>
+                    <h:outputText value="#{cursoformacionController.selected.referencia}" title="#{bundle.ViewCursoformacionTitle_referencia}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_fechainicio}"/>
+                    <h:outputText value="#{cursoformacionController.selected.fechainicio}" title="#{bundle.ViewCursoformacionTitle_fechainicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_fechafinal}"/>
+                    <h:outputText value="#{cursoformacionController.selected.fechafinal}" title="#{bundle.ViewCursoformacionTitle_fechafinal}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_justifiacion}"/>
+                    <h:outputText value="#{cursoformacionController.selected.justifiacion}" title="#{bundle.ViewCursoformacionTitle_justifiacion}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_objetivosgenerales}"/>
+                    <h:outputText value="#{cursoformacionController.selected.objetivosgenerales}" title="#{bundle.ViewCursoformacionTitle_objetivosgenerales}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_objetivosespecificos}"/>
+                    <h:outputText value="#{cursoformacionController.selected.objetivosespecificos}" title="#{bundle.ViewCursoformacionTitle_objetivosespecificos}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_valorempresa}"/>
+                    <h:outputText value="#{cursoformacionController.selected.valorempresa}" title="#{bundle.ViewCursoformacionTitle_valorempresa}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_valorlocal}"/>
+                    <h:outputText value="#{cursoformacionController.selected.valorlocal}" title="#{bundle.ViewCursoformacionTitle_valorlocal}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_lugar}"/>
+                    <h:outputText value="#{cursoformacionController.selected.lugar}" title="#{bundle.ViewCursoformacionTitle_lugar}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_nombre}"/>
+                    <h:outputText value="#{cursoformacionController.selected.nombre}" title="#{bundle.ViewCursoformacionTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_aprobado}"/>
+                    <h:outputText value="#{cursoformacionController.selected.aprobado}" title="#{bundle.ViewCursoformacionTitle_aprobado}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_clienteformacion}"/>
+                    <h:outputText value="#{cursoformacionController.selected.clienteformacion}" title="#{bundle.ViewCursoformacionTitle_clienteformacion}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_conferencista}"/>
+                    <h:outputText value="#{cursoformacionController.selected.conferencista}" title="#{bundle.ViewCursoformacionTitle_conferencista}"/>
+                    <h:outputText value="#{bundle.ViewCursoformacionLabel_tipocursoformacion}"/>
+                    <h:outputText value="#{cursoformacionController.selected.tipocursoformacion}" title="#{bundle.ViewCursoformacionTitle_tipocursoformacion}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cursoformacionController.destroyAndView}" value="#{bundle.ViewCursoformacionDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCursoformacionEditLink}"/>
+                <br />
+                <h:commandLink action="#{cursoformacionController.prepareCreate}" value="#{bundle.ViewCursoformacionCreateLink}" />
+                <br />
+                <h:commandLink action="#{cursoformacionController.prepareList}" value="#{bundle.ViewCursoformacionShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCursoformacionIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

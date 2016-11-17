@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCursoformacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_referencia}" for="referencia" />
+                    <h:inputText id="referencia" value="#{cursoformacionController.selected.referencia}" title="#{bundle.CreateCursoformacionTitle_referencia}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_referencia}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_fechainicio}" for="fechainicio" />
+                    <h:inputText id="fechainicio" value="#{cursoformacionController.selected.fechainicio}" title="#{bundle.CreateCursoformacionTitle_fechainicio}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_fechainicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_fechafinal}" for="fechafinal" />
+                    <h:inputText id="fechafinal" value="#{cursoformacionController.selected.fechafinal}" title="#{bundle.CreateCursoformacionTitle_fechafinal}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_fechafinal}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_justifiacion}" for="justifiacion" />
+                    <h:inputText id="justifiacion" value="#{cursoformacionController.selected.justifiacion}" title="#{bundle.CreateCursoformacionTitle_justifiacion}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_justifiacion}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_objetivosgenerales}" for="objetivosgenerales" />
+                    <h:inputText id="objetivosgenerales" value="#{cursoformacionController.selected.objetivosgenerales}" title="#{bundle.CreateCursoformacionTitle_objetivosgenerales}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_objetivosgenerales}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_objetivosespecificos}" for="objetivosespecificos" />
+                    <h:inputText id="objetivosespecificos" value="#{cursoformacionController.selected.objetivosespecificos}" title="#{bundle.CreateCursoformacionTitle_objetivosespecificos}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_objetivosespecificos}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_valorempresa}" for="valorempresa" />
+                    <h:inputText id="valorempresa" value="#{cursoformacionController.selected.valorempresa}" title="#{bundle.CreateCursoformacionTitle_valorempresa}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_valorempresa}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_valorlocal}" for="valorlocal" />
+                    <h:inputText id="valorlocal" value="#{cursoformacionController.selected.valorlocal}" title="#{bundle.CreateCursoformacionTitle_valorlocal}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_valorlocal}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_lugar}" for="lugar" />
+                    <h:inputText id="lugar" value="#{cursoformacionController.selected.lugar}" title="#{bundle.CreateCursoformacionTitle_lugar}" />
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{cursoformacionController.selected.nombre}" title="#{bundle.CreateCursoformacionTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_aprobado}" for="aprobado" />
+                    <h:inputText id="aprobado" value="#{cursoformacionController.selected.aprobado}" title="#{bundle.CreateCursoformacionTitle_aprobado}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_aprobado}"/>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_clienteformacion}" for="clienteformacion" />
+                    <h:selectOneMenu id="clienteformacion" value="#{cursoformacionController.selected.clienteformacion}" title="#{bundle.CreateCursoformacionTitle_clienteformacion}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_clienteformacion}">
+                        <f:selectItems value="#{clienteformacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_conferencista}" for="conferencista" />
+                    <h:selectOneMenu id="conferencista" value="#{cursoformacionController.selected.conferencista}" title="#{bundle.CreateCursoformacionTitle_conferencista}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_conferencista}">
+                        <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateCursoformacionLabel_tipocursoformacion}" for="tipocursoformacion" />
+                    <h:selectOneMenu id="tipocursoformacion" value="#{cursoformacionController.selected.tipocursoformacion}" title="#{bundle.CreateCursoformacionTitle_tipocursoformacion}" required="true" requiredMessage="#{bundle.CreateCursoformacionRequiredMessage_tipocursoformacion}">
+                        <f:selectItems value="#{tipocursoformacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cursoformacionController.create}" value="#{bundle.CreateCursoformacionSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{cursoformacionController.prepareList}" value="#{bundle.CreateCursoformacionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCursoformacionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

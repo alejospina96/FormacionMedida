@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <h:outputStylesheet library="css" name="styleHome.css"/>
+        <h:outputStylesheet library="css" name="styleNav.css"/>
+        <ui:remove><h:outputStylesheet library="css" name="styleForm.css"/></ui:remove>
+        <h:outputStylesheet library="css" name="styleListas.css"/>
+        <h:outputStylesheet library="css" name="styleFooter.css"/>
+        <h:outputScript library="js" name="botones-muestran.js"/>
+
+    </h:head>
+
+    <h:body>
+        <header>
+            <img src="resources/images/icon-header.jpg" style="float: left; margin-left: 10%" title="" alt="" height="65" width="100"/>
+            <h1 class="header" style="margin-top: 10px; padding-top: 18px;">Formacion A La Medida</h1>
+        </header>
+        <nav>
+            <li>
+                <button class="button" id="inicio" type="button" autofocus="true">Inicio</button>
+            </li>
+            <li>
+                <button class="button" id="empresas" type="button">Empresas</button>
+            </li>
+            <li>
+                <button class="button" type="button">Seminarios+</button>
+                <ul>
+                    <li class="subLi">
+                        <button id="crear-seminario" class="subBut" type="button">Crear</button>
+                    </li>
+                    <li class="subLi">
+                        <button id="seminarios" class="subBut" type="button">Actualizar</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="button" id="historial" type="button">Historial</button>
+            </li>
+        </nav>
+        
+        <div class="relleno"></div>
+        
+        <ui:insert name="content"/>
+        <ui:insert name="body"/>
+        <footer>
+            <section id="section-footer">
+
+                <p> <small> Universidad de Ibagué - Carrera 22 Calle 67 B/Ambalá - NIT: 890704382-1 - Resolución 1867 de febrero 27 de 1981  </small> </p>
+                <p> <small>Centro de contacto: +57(8)270 9444 - FAX: +57(8)2709443 - PBX: +57(8)2709400 </small></p>  
+                <p> <small>Línea gratuita nacional: 018000 91 0277 - Ibagué, Tolima, Colombia.</small></p>
+                <p> <small>Desarrolladores Cristian Garzon: <a href="mailto:crishegar1495@hotmail.com"> crishegar1495@hotmail.com</a> &nbsp;tfno: 3193387845</small></p>
+                <p> <small>Daniel Florez: <a href="mailto:alejo_ospina96@hotmail.com"> alejo_ospina96@hotmail.com</a> &nbsp;tfno: 3166172886</small></p>
+                <figure>
+                    <a id="icon-footer" href="https://www.unglobalcompact.org/">
+                        <img src="resources/images/icon-footer.png"/>
+                    </a> 
+                </figure>
+
+            </section>
+
+        </footer>
+    </h:body>
+
+</html>

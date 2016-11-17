@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePersonaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_identificacion}" for="identificacion" />
+                    <h:inputText id="identificacion" value="#{personaController.selected.identificacion}" title="#{bundle.CreatePersonaTitle_identificacion}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_identificacion}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_ciudadexpedicionidentificacion}" for="ciudadexpedicionidentificacion" />
+                    <h:inputText id="ciudadexpedicionidentificacion" value="#{personaController.selected.ciudadexpedicionidentificacion}" title="#{bundle.CreatePersonaTitle_ciudadexpedicionidentificacion}" />
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_primernombre}" for="primernombre" />
+                    <h:inputText id="primernombre" value="#{personaController.selected.primernombre}" title="#{bundle.CreatePersonaTitle_primernombre}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_primernombre}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_segundonombre}" for="segundonombre" />
+                    <h:inputText id="segundonombre" value="#{personaController.selected.segundonombre}" title="#{bundle.CreatePersonaTitle_segundonombre}" />
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_primerapellido}" for="primerapellido" />
+                    <h:inputText id="primerapellido" value="#{personaController.selected.primerapellido}" title="#{bundle.CreatePersonaTitle_primerapellido}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_primerapellido}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_segundoapellido}" for="segundoapellido" />
+                    <h:inputText id="segundoapellido" value="#{personaController.selected.segundoapellido}" title="#{bundle.CreatePersonaTitle_segundoapellido}" />
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_genero}" for="genero" />
+                    <h:inputText id="genero" value="#{personaController.selected.genero}" title="#{bundle.CreatePersonaTitle_genero}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_genero}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{personaController.selected.email}" title="#{bundle.CreatePersonaTitle_email}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{personaController.selected.telefono}" title="#{bundle.CreatePersonaTitle_telefono}" />
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_celular}" for="celular" />
+                    <h:inputText id="celular" value="#{personaController.selected.celular}" title="#{bundle.CreatePersonaTitle_celular}" />
+                    <h:outputLabel value="#{bundle.CreatePersonaLabel_tipo}" for="tipo" />
+                    <h:selectOneMenu id="tipo" value="#{personaController.selected.tipo}" title="#{bundle.CreatePersonaTitle_tipo}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_tipo}">
+                        <f:selectItems value="#{tipopersonaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{personaController.create}" value="#{bundle.CreatePersonaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{personaController.prepareList}" value="#{bundle.CreatePersonaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePersonaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
