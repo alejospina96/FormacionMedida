@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:define name="title">
+            Formacion a la medida
+        </ui:define>
+        <!--<h:outputStylesheet library="css" name="jsfcrud.css"/>
+            <h:outputStylesheet librarsy="css" name="navbar.css"/>-->
+    </h:head>
+    <h:body>
+        <ui:composition template="/template.xhtml">
+            <ui:define name="content">
+                <div class="container" align="center">
+                    <div class="well span3 " align="center">
+                        <h1 align ="center">Registrar un nuevo contacto </h1>
+                        <h:form >
+                            <h:panelGrid columns="2">
+
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_identificacion}" for="identificacion" />
+                                <h:inputText id="identificacioncontacto" value="#{personaController.selected.identificacion}" title="#{bundle.CreatePersonaTitle_identificacion}" required="false" requiredMessage="#{bundle.CreatePersonaRequiredMessage_identificacion}"/>
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_ciudadexpedicionidentificacion}" for="ciudadexpedicionidentificacion" />
+                                <h:inputText id="ciudadexpedicionidentificacioncontacto" value="#{personaController.selected.ciudadexpedicionidentificacion}" title="#{bundle.CreatePersonaTitle_ciudadexpedicionidentificacion}" />
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_primernombre}" for="primernombre" />
+                                <h:inputText id="primernombrecontacto" value="#{personaController.selected.primernombre}" title="#{bundle.CreatePersonaTitle_primernombre}" required="false" requiredMessage="#{bundle.CreatePersonaRequiredMessage_primernombre}"/>
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_segundonombre}" for="segundonombre" />
+                                <h:inputText id="segundonombrecontacto" value="#{personaController.selected.segundonombre}" title="#{bundle.CreatePersonaTitle_segundonombre}" />
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_primerapellido}" for="primerapellido" />
+                                <h:inputText id="primerapellidocontacto" value="#{personaController.selected.primerapellido}" title="#{bundle.CreatePersonaTitle_primerapellido}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_primerapellido}"/>
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_segundoapellido}" for="segundoapellido" />
+                                <h:inputText id="segundoapellidocontacto" value="#{personaController.selected.segundoapellido}" title="#{bundle.CreatePersonaTitle_segundoapellido}" />
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_genero}" for="genero" />
+                                <h:inputText id="generocontacto" value="#{personaController.selected.genero}" title="#{bundle.CreatePersonaTitle_genero}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_genero}"/>
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_email}" for="email" />
+                                <h:inputText id="emailcontacto" value="#{personaController.selected.email}" title="#{bundle.CreatePersonaTitle_email}" required="true" requiredMessage="#{bundle.CreatePersonaRequiredMessage_email}"/>
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_telefono}" for="telefono" />
+                                <h:inputText id="telefonocontacto" value="#{personaController.selected.telefono}" title="#{bundle.CreatePersonaTitle_telefono}" />
+                                <h:outputLabel value="#{bundle.CreatePersonaLabel_celular}" for="celular" />
+                                <h:inputText id="celularcontacto" value="#{personaController.selected.celular}" title="#{bundle.CreatePersonaTitle_celular}" />
+                                <h:commandButton action="#{personaController.createContacto()}" value="Registrar Contacto" />
+                                <link><h:link value="Volver" outcome="registrarEmpresa"/> </link>
+                                <h:outputLabel value=""  />
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+
+
+
+
+
+
+
+
+
+</html>
