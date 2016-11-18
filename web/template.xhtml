@@ -6,10 +6,14 @@
 
     <h:head>
         <meta charset="utf-8"/>
+        <link rel="icon" type="image/x-icon" href="resources/images/icon.jpg"/>
+        <title>
+            <ui:insert name="title"/>
+        </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <h:outputStylesheet library="css" name="styleHome.css"/>
         <h:outputStylesheet library="css" name="styleNav.css"/>
-        <ui:remove><h:outputStylesheet library="css" name="styleForm.css"/></ui:remove>
+        <!--<h:outputStylesheet library="css" name="styleForm.css"/>-->
         <h:outputStylesheet library="css" name="styleListas.css"/>
         <h:outputStylesheet library="css" name="styleFooter.css"/>
         <h:outputScript library="js" name="botones-muestran.js"/>
@@ -18,8 +22,8 @@
 
     <h:body>
         <header>
-            <img src="resources/images/icon-header.jpg" style="float: left; margin-left: 10%" title="" alt="" height="65" width="100"/>
-            <h1 class="header" style="margin-top: 10px; padding-top: 18px;">Formacion A La Medida</h1>
+            <h:graphicImage library="images" styleClass="header-icon" name="icon-header.jpg"/>
+            <h1 class="header">Formacion A La Medida</h1>
         </header>
         <nav>
             <li>
@@ -58,7 +62,7 @@
                 <p> <small>Daniel Florez: <a href="mailto:alejo_ospina96@hotmail.com"> alejo_ospina96@hotmail.com</a> &nbsp;tfno: 3166172886</small></p>
                 <figure>
                     <a id="icon-footer" href="https://www.unglobalcompact.org/">
-                        <img src="resources/images/icon-footer.png"/>
+                        <h:graphicImage library="images" name="icon-footer.png"/>
                     </a> 
                 </figure>
 

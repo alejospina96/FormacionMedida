@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      template="template.xhtml">
+
+    <h:head/>
+    <h:body>
+        <ui:composition template="template.xhtml">
+            <ui:define name="title">Registrar Empresa Nueva</ui:define>
+            <ui:define name="content">
+
+                <div class="container" align="center">
+
+                    <div class="well span3 " >
+                        <h1 align ="center">Registrar una nueva empresa </h1>
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                        <h:form>
+
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_nit}" for="nit" />
+                                <h:inputText id="nit" value="#{empresaController.selected.nit}" title="#{bundle.CreateEmpresaTitle_nit}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_nit}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_razonsocial}" for="razonsocial" />
+                                <h:inputText id="razonsocial" value="#{empresaController.selected.razonsocial}" title="#{bundle.CreateEmpresaTitle_razonsocial}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_razonsocial}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_direccion}" for="direccion" />
+                                <h:inputText id="direccion" value="#{empresaController.selected.direccion}" title="#{bundle.CreateEmpresaTitle_direccion}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_direccion}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_ciudad}" for="ciudad" />
+                                <h:inputText id="ciudad" value="#{empresaController.selected.ciudad}" title="#{bundle.CreateEmpresaTitle_ciudad}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_ciudad}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_email}" for="email" />
+                                <h:inputText id="email" value="#{empresaController.selected.email}" title="#{bundle.CreateEmpresaTitle_email}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_email}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_departamento}" for="departamento" />
+                                <h:inputText id="departamento" value="#{empresaController.selected.departamento}" title="#{bundle.CreateEmpresaTitle_departamento}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_departamento}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_numeroempleados}" for="numeroempleados" />
+                                <h:inputText id="numeroempleados" value="#{empresaController.selected.numeroempleados}" title="#{bundle.CreateEmpresaTitle_numeroempleados}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_numeroempleados}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_numerosucursales}" for="numerosucursales" />
+                                <h:inputText id="numerosucursales" value="#{empresaController.selected.numerosucursales}" title="#{bundle.CreateEmpresaTitle_numerosucursales}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_numerosucursales}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_actividadeconomica}" for="actividadeconomica" />
+                                <h:inputText id="actividadeconomica" value="#{empresaController.selected.actividadeconomica}" title="#{bundle.CreateEmpresaTitle_actividadeconomica}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_actividadeconomica}"/>
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_descripcionproyecto}" for="descripcionproyecto" />
+                                <h:inputText id="descripcionproyecto" value="#{empresaController.selected.descripcionproyecto}" title="#{bundle.CreateEmpresaTitle_descripcionproyecto}" required="false" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_descripcionproyecto}"/>
+                                <h:outputLabel value=""  />
+                                <h:outputLabel value=""  />
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_contacto}"  />
+                                <h:outputLabel value=""  />
+                                <h:selectOneMenu id="contacto" value="#{empresaController.selected.contacto}" title="Crear Representante" required="true" requiredMessage="Agregue un representante">
+                                    <f:selectItems value="#{personaController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                                <link><h:link value="Añadir un nuevo contacto" outcome="crearContacto"/></link>
+                                <h:outputLabel value=""/>
+                                <h:outputLabel value="" />
+                                <h:outputLabel value="#{bundle.CreateEmpresaLabel_representante}" for="representante" />
+                                <h:outputLabel value=""  />
+                                <h:selectOneMenu id="representante" value="#{empresaController.selected.representante}" title="#{bundle.CreateEmpresaTitle_representante}" required="true" requiredMessage="#{bundle.CreateEmpresaRequiredMessage_representante}">
+                                    <f:selectItems value="#{personaController.contactosSelectOne}"/>
+                                </h:selectOneMenu>
+                                <link><h:link value="Añadir un representante" outcome="crearRepresentante"/></link>
+
+                            </h:panelGrid>
+                            <br />
+                            <h:commandButton action="#{empresaController.create}" value="Registrar" />
+
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+
+</html>
