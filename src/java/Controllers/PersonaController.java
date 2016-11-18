@@ -187,6 +187,9 @@ public class PersonaController implements Serializable {
     public SelectItem[] getItemsAvailableSelectOne() {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
+    public SelectItem[] getContactosSelectOne(){
+        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+    }
 
     public Persona getPersona(java.lang.Long id) {
         return ejbFacade.find(id);

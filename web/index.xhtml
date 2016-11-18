@@ -5,15 +5,20 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
-         <ui:define name="title">
-            <h:outputText value="Formacion a la medida"></h:outputText>
+         
+        <ui:define name="title">
+            
+            Formacion a la medida
         </ui:define>
         <ui:define name="content">
             Hello from Facelets
+            <!-- Hola soy un comentario-->
             <br />
             <h:link outcome="/clienteformacion/List" value="Show All Clienteformacion Items"/>
             <br />
             <h:link outcome="/cursoformacion/List" value="Show All Cursoformacion Items"/>
+            <br />
+            <h:link outcome="/registrarEmpresa" value="Registrar empresa"/>
             <br />
             <h:link outcome="/descuento/List" value="Show All Descuento Items"/>
             <br />
