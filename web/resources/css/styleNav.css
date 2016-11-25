@@ -26,6 +26,7 @@ li, ul{
 	list-style: none;
 	margin: 0%;
 	padding: 0%;
+	text-align: center;
 }
 /* da el formato del navegador (posiciona)*/
 nav{
@@ -51,6 +52,7 @@ nav li button:hover{
 
 nav li a:hover{
 	background-color: rgba(77,120,166,1);
+	color: white;
 }
 
 /*ocultar los submenus*/
@@ -73,13 +75,14 @@ nav > li{
 	background-color: white;
 	padding: 0px;
 	height: 100%;
-	width: 100%;
+	width: 400%;
 	position: relative;
 	box-shadow: 2px 2px 15px;
+	color: rgba(5,55,108,1);
 }
 /* da el color de los sublabes al pasar por encima*/
 .subLi:hover{
-	background-color: rgba(5,55,108,1);
+	background-color: rgba(77,120,166,1);
 }
 
 /*da la forma de los bonotes del submenu*/

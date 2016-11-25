@@ -9,38 +9,38 @@
 .header{
     margin-top: 10px;
     padding-top: 18px;
+    text-align: left;
 }
-#content-slider{
-	width: 100%;
-	border: 1px solid red;
-	position: relative;
-	height: 200px;
-}
-#slider{
-	border-radius: 10px;
-	border: 2px solid violet;
-	width: 100%;
-	min-height: 200px;
-	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
-}
-#slider .element-home{
-	width: 100%;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-#slider .element-home img{
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-#slider .element-home p{
-	display: block;
-	width: 100%;
-	text-align: center;
-	text-shadow: 2px 2px 3px black;
 
+.slider{
+	width: 50%;
+	margin: auto;
+	margin-top: 50px;
+	overflow: hidden;
+	border-width: 5%;
+	border-color: rgba(5,55,108,1);
+        padding-bottom: 70px;
+}
+
+.slider ul{
+	display: flex;
+	padding: 0px;
+	width: 200%;
+	animation: cambio 6s infinite alternate ease-in;
+}
+
+.slider li{
+	width: 100%;
+	list-style: none;
+}
+
+.slider img{
+	width: 100%
+}
+
+@keyframes cambio{
+	0% { margin-left: 0; }
+	45%{ margin-left: 0; }
+	55%{ margin-left: -100% }
+	100%{ margin-left: -100% }
 }

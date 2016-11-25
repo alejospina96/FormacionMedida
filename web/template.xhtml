@@ -16,6 +16,7 @@
         <!--<h:outputStylesheet library="css" name="styleForm.css"/>-->
         <h:outputStylesheet library="css" name="styleListas.css"/>
         <h:outputStylesheet library="css" name="styleFooter.css"/>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="botones-muestran.js"/>
 
     </h:head>
@@ -27,26 +28,27 @@
         </header>
         <nav>
             <li>
-                <button class="button" id="inicio" type="button" autofocus="true">Inicio</button>
+                <link><h:link value="Index" outcome="index"/></link>
             </li>
             <li>
-                <button class="button" id="empresas" type="button">Empresas</button>
+                <link><h:link value="Empresa" outcome="registrarEmpresa"/></link>
             </li>
             <li>
-                <button class="button" type="button">Seminarios+</button>
+                <h:outputLink value=""> Seminarios+ </h:outputLink>
                 <ul>
-                    <li class="subLi">
-                        <button id="crear-seminario" class="subBut" type="button">Crear</button>
+                    <li>
+                        <link><h:link class="subLi" value="Crear" outcome="crearCursoFormacion"/></link>
                     </li>
-                    <li class="subLi">
-                        <button id="seminarios" class="subBut" type="button">Actualizar</button>
+                    <li>
+                        <link><h:link class="subLi" value="Actualizar" outcome="actualizarCursoFormacion"/></link>
                     </li>
                 </ul>
             </li>
             <li>
-                <button class="button" id="historial" type="button">Historial</button>
+                <link><h:link value="Historial" outcome="historial"/></link>
             </li>
         </nav>
+
         
         <div class="relleno"></div>
         
