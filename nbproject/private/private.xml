@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/web/crearRepresentante.xhtml</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/src/java/Facades/PersonaFacade.java</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/src/java/EntityClasses/Persona.java</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/web/registrarEmpresa.xhtml</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/src/java/Controllers/PersonaController.java</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/src/java/Facades/AbstractFacade.java</file>
-            <file>file:/C:/Users/daniel/Development/FormacionMedida/FormacionMedida/web/crearContacto.xhtml</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/resources/css/styleNav.css</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/index.xhtml</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/resources/css/jsfcrud.css</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/resources/css/styleHome.css</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/clienteformacion/List.xhtml</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/cursoformacion/List.xhtml</file>
+            <file>file:/C:/Users/cristian/Documents/GitHub/Software2/appWeb/FormacionMedida/web/template.xhtml</file>
         </group>
     </open-files>
 </project-private>

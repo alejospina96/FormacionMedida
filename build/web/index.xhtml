@@ -5,12 +5,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="/template.xhtml">
-         
+        
         <ui:define name="title">
             
             Formacion a la medida
         </ui:define>
         <ui:define name="content">
+            
+            <div id="seccion-inicio">
+                <div class="slider">
+                    <ul>
+			<li><img src="resources/images/banner1.jpg"/></li>
+			<li><img src="resources/images/banner2.jpg"/></li>
+                    </ul>
+                </div>	
+            </div>
+            
             Hello from Facelets
             <!-- Hola soy un comentario-->
             <br />
@@ -34,9 +44,13 @@
             <br />
             <h:link outcome="/tipocursoformacion/List" value="Show All Tipocursoformacion Items"/>
             <br />
-            <h:link outcome="/tipopersona/List" value="Show All Tipopersona Items"/>
+            <h:link outcome="/tipopersona/List" value="Show All Tipopersona Items"/>   
+            
+            
         </ui:define>
     </ui:composition>
+    
+    
 
 
 
